@@ -1,19 +1,16 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of Student
+ * The Student class holds information, calculates various statistics and 
+ * displays information about the student
  *
  * @author Li-Yan Tong
  */
 class Student {
 
-    //Ctor
+    /**
+     * Constructor for Student
+     */
     function __construct() {
         $this->surname = '';
         $this->first_name = '';
@@ -21,25 +18,44 @@ class Student {
         $this->grades = array();
     }
 
-    //Add an email address
+    /**
+     * add_email() adds email string information about a student
+     * 
+     * @param type $which type of email address String value
+     * @param type $address email address String value
+     */
     function add_email($which, $address) {
         $this->emails[$which] = $address;
     }
 
-    //Add a grade
+    /**
+     * add_grade() adds a grade integer value out of 100 to an array of grades 
+     * for the Student
+     * 
+     * @param type $grade grave value as an integer value
+     */
     function add_grade($grade) {
         $this->grades[] = $grade;
     }
 
-    //Calculate and get a grade average
+    /**
+     * average() calculates a students grade average
+     * 
+     * @return type  a grade average represented as a rounded integer value
+     */
     function average() {
         $total = 0;
         foreach ($this->grades as $value)
             $total += $value;
-        return $total / count($this->grades);
+        return round($total / count($this->grades));
     }
 
-    //Print Student information
+    /**
+     * toString() collects test representation of student information to be
+     * printed on the screen
+     * 
+     * @return type student information as a text String value
+     */
     function toString() {
         $result = $this->first_name . ' ' . $this->surname;
         $result .= ' (' . $this->average() . ")\n";
