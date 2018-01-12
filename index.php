@@ -46,7 +46,7 @@
         $third->add_grade(90);
         $students['b789'] = $third;
 
-        // Sort Students by first name
+        // Sort Students by key sequence
         ksort($students);
 
         // Print Students on Page seperated by horizontal divider
