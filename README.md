@@ -1,2 +1,4 @@
-# comp4711-lab01
-COMP4711 lab 1
+comp4711-lab01
+================
+
+This simple PHP lab calculates and displays the grade average of several students.
